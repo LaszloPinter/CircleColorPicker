@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorBubbleView" customModule="Wuz" customModuleProvider="target">
+            <connections>
+                <outlet property="bubbleBackgroundView" destination="mjQ-x6-lAG" id="IdH-fb-MOv"/>
+                <outlet property="bubblePosition" destination="cPk-DM-mSU" id="xct-Cy-01E"/>
+                <outlet property="bubbleWidth" destination="XIJ-gk-8bT" id="s19-7J-tHb"/>
+                <outlet property="connectStringView" destination="Unp-Hw-kQ3" id="ZpJ-cQ-nIe"/>
+                <outlet property="ringMaskImageView" destination="sE3-IU-ecH" id="QxH-wV-jTT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Unp-Hw-kQ3">
+                    <rect key="frame" x="200" y="199" width="54" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="YDs-jG-194"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjQ-x6-lAG">
+                    <rect key="frame" x="238" y="184" width="32" height="32"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ringMask" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-IU-ecH">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="sE3-IU-ecH" secondAttribute="bottom" id="9SR-oI-OTA"/>
+                        <constraint firstItem="sE3-IU-ecH" firstAttribute="leading" secondItem="mjQ-x6-lAG" secondAttribute="leading" id="QSa-13-c0H"/>
+                        <constraint firstAttribute="width" constant="32" id="XIJ-gk-8bT"/>
+                        <constraint firstAttribute="width" secondItem="mjQ-x6-lAG" secondAttribute="height" id="mfh-Ky-pIZ"/>
+                        <constraint firstItem="sE3-IU-ecH" firstAttribute="top" secondItem="mjQ-x6-lAG" secondAttribute="top" id="r9q-cA-XB8"/>
+                        <constraint firstAttribute="trailing" secondItem="sE3-IU-ecH" secondAttribute="trailing" id="zmy-Wb-fZL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mjQ-x6-lAG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RRT-Jd-Zne"/>
+                <constraint firstItem="Unp-Hw-kQ3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="WoC-UB-8eV"/>
+                <constraint firstItem="mjQ-x6-lAG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="54" id="cPk-DM-mSU"/>
+                <constraint firstItem="Unp-Hw-kQ3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mR2-SI-39s"/>
+                <constraint firstItem="Unp-Hw-kQ3" firstAttribute="trailing" secondItem="mjQ-x6-lAG" secondAttribute="centerX" id="rvS-rz-0p6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="25.5" y="-82"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ringMask" width="50" height="50"/>
+    </resources>
+</document>

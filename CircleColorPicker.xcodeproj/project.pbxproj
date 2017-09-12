@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1731970A1F67FE42003ACD1C /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173196FD1F67FE41003ACD1C /* CGFloat+Extensions.swift */; };
+		1731970B1F67FE42003ACD1C /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173196FE1F67FE42003ACD1C /* CGPoint+Extensions.swift */; };
+		1731970C1F67FE42003ACD1C /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173196FF1F67FE42003ACD1C /* CGVector+Extensions.swift */; };
+		1731970D1F67FE5B003ACD1C /* CircleColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197011F67FE42003ACD1C /* CircleColorPickerView.swift */; };
+		1731970E1F67FE5B003ACD1C /* CircleColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173197021F67FE42003ACD1C /* CircleColorPickerView.xib */; };
+		1731970F1F67FE5B003ACD1C /* CircleColorPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197031F67FE42003ACD1C /* CircleColorPickerViewDelegate.swift */; };
+		173197101F67FE5B003ACD1C /* CircleColorPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197041F67FE42003ACD1C /* CircleColorPickerViewExtension.swift */; };
+		173197111F67FE5B003ACD1C /* ColorBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197051F67FE42003ACD1C /* ColorBubbleView.swift */; };
+		173197121F67FE5B003ACD1C /* ColorBubbleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173197061F67FE42003ACD1C /* ColorBubbleView.xib */; };
+		173197131F67FE5B003ACD1C /* ColorSampleCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197071F67FE42003ACD1C /* ColorSampleCircleView.swift */; };
+		173197141F67FE5B003ACD1C /* RainbowCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197081F67FE42003ACD1C /* RainbowCircleView.swift */; };
+		173197151F67FE5B003ACD1C /* SaturationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197091F67FE42003ACD1C /* SaturationPickerView.swift */; };
+		173197281F6803C8003ACD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 173197161F67FEEF003ACD1C /* Assets.xcassets */; };
+		17819D9B1F6191BC007AD1C8 /* CircleColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17819D911F6191BC007AD1C8 /* CircleColorPicker.framework */; };
+		17819DA01F6191BC007AD1C8 /* CircleColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17819D9F1F6191BC007AD1C8 /* CircleColorPickerTests.swift */; };
+		17819DA21F6191BC007AD1C8 /* CircleColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 17819D941F6191BC007AD1C8 /* CircleColorPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17819D9C1F6191BC007AD1C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17819D881F6191BC007AD1C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17819D901F6191BC007AD1C8;
+			remoteInfo = CircleColorPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		173196FD1F67FE41003ACD1C /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		173196FE1F67FE42003ACD1C /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		173196FF1F67FE42003ACD1C /* CGVector+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		173197011F67FE42003ACD1C /* CircleColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPickerView.swift; sourceTree = "<group>"; };
+		173197021F67FE42003ACD1C /* CircleColorPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleColorPickerView.xib; sourceTree = "<group>"; };
+		173197031F67FE42003ACD1C /* CircleColorPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPickerViewDelegate.swift; sourceTree = "<group>"; };
+		173197041F67FE42003ACD1C /* CircleColorPickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPickerViewExtension.swift; sourceTree = "<group>"; };
+		173197051F67FE42003ACD1C /* ColorBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBubbleView.swift; sourceTree = "<group>"; };
+		173197061F67FE42003ACD1C /* ColorBubbleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorBubbleView.xib; sourceTree = "<group>"; };
+		173197071F67FE42003ACD1C /* ColorSampleCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSampleCircleView.swift; sourceTree = "<group>"; };
+		173197081F67FE42003ACD1C /* RainbowCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowCircleView.swift; sourceTree = "<group>"; };
+		173197091F67FE42003ACD1C /* SaturationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationPickerView.swift; sourceTree = "<group>"; };
+		173197161F67FEEF003ACD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17819D911F6191BC007AD1C8 /* CircleColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircleColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17819D941F6191BC007AD1C8 /* CircleColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleColorPicker.h; sourceTree = "<group>"; };
+		17819D951F6191BC007AD1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17819D9A1F6191BC007AD1C8 /* CircleColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17819D9F1F6191BC007AD1C8 /* CircleColorPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPickerTests.swift; sourceTree = "<group>"; };
+		17819DA11F6191BC007AD1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17819D8D1F6191BC007AD1C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17819D971F6191BC007AD1C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17819D9B1F6191BC007AD1C8 /* CircleColorPicker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		173197001F67FE42003ACD1C /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				173197011F67FE42003ACD1C /* CircleColorPickerView.swift */,
+				173197021F67FE42003ACD1C /* CircleColorPickerView.xib */,
+				173197031F67FE42003ACD1C /* CircleColorPickerViewDelegate.swift */,
+				173197041F67FE42003ACD1C /* CircleColorPickerViewExtension.swift */,
+				173197051F67FE42003ACD1C /* ColorBubbleView.swift */,
+				173197061F67FE42003ACD1C /* ColorBubbleView.xib */,
+				173197071F67FE42003ACD1C /* ColorSampleCircleView.swift */,
+				173197081F67FE42003ACD1C /* RainbowCircleView.swift */,
+				173197091F67FE42003ACD1C /* SaturationPickerView.swift */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		17819D871F6191BC007AD1C8 = {
+			isa = PBXGroup;
+			children = (
+				17819D931F6191BC007AD1C8 /* CircleColorPicker */,
+				17819D9E1F6191BC007AD1C8 /* CircleColorPickerTests */,
+				17819D921F6191BC007AD1C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17819D921F6191BC007AD1C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17819D911F6191BC007AD1C8 /* CircleColorPicker.framework */,
+				17819D9A1F6191BC007AD1C8 /* CircleColorPickerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17819D931F6191BC007AD1C8 /* CircleColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				173196FD1F67FE41003ACD1C /* CGFloat+Extensions.swift */,
+				173196FE1F67FE42003ACD1C /* CGPoint+Extensions.swift */,
+				173196FF1F67FE42003ACD1C /* CGVector+Extensions.swift */,
+				173197161F67FEEF003ACD1C /* Assets.xcassets */,
+				173197001F67FE42003ACD1C /* ColorPicker */,
+				17819D941F6191BC007AD1C8 /* CircleColorPicker.h */,
+				17819D951F6191BC007AD1C8 /* Info.plist */,
+			);
+			path = CircleColorPicker;
+			sourceTree = "<group>";
+		};
+		17819D9E1F6191BC007AD1C8 /* CircleColorPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				17819D9F1F6191BC007AD1C8 /* CircleColorPickerTests.swift */,
+				17819DA11F6191BC007AD1C8 /* Info.plist */,
+			);
+			path = CircleColorPickerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		17819D8E1F6191BC007AD1C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17819DA21F6191BC007AD1C8 /* CircleColorPicker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		17819D901F6191BC007AD1C8 /* CircleColorPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17819DA51F6191BC007AD1C8 /* Build configuration list for PBXNativeTarget "CircleColorPicker" */;
+			buildPhases = (
+				17819D8C1F6191BC007AD1C8 /* Sources */,
+				17819D8D1F6191BC007AD1C8 /* Frameworks */,
+				17819D8E1F6191BC007AD1C8 /* Headers */,
+				17819D8F1F6191BC007AD1C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CircleColorPicker;
+			productName = CircleColorPicker;
+			productReference = 17819D911F6191BC007AD1C8 /* CircleColorPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		17819D991F6191BC007AD1C8 /* CircleColorPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17819DA81F6191BC007AD1C8 /* Build configuration list for PBXNativeTarget "CircleColorPickerTests" */;
+			buildPhases = (
+				17819D961F6191BC007AD1C8 /* Sources */,
+				17819D971F6191BC007AD1C8 /* Frameworks */,
+				17819D981F6191BC007AD1C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17819D9D1F6191BC007AD1C8 /* PBXTargetDependency */,
+			);
+			name = CircleColorPickerTests;
+			productName = CircleColorPickerTests;
+			productReference = 17819D9A1F6191BC007AD1C8 /* CircleColorPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17819D881F6191BC007AD1C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Laszlo Pinter";
+				TargetAttributes = {
+					17819D901F6191BC007AD1C8 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					17819D991F6191BC007AD1C8 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 17819D8B1F6191BC007AD1C8 /* Build configuration list for PBXProject "CircleColorPicker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 17819D871F6191BC007AD1C8;
+			productRefGroup = 17819D921F6191BC007AD1C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17819D901F6191BC007AD1C8 /* CircleColorPicker */,
+				17819D991F6191BC007AD1C8 /* CircleColorPickerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17819D8F1F6191BC007AD1C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173197121F67FE5B003ACD1C /* ColorBubbleView.xib in Resources */,
+				173197281F6803C8003ACD1C /* Assets.xcassets in Resources */,
+				1731970E1F67FE5B003ACD1C /* CircleColorPickerView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17819D981F6191BC007AD1C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17819D8C1F6191BC007AD1C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1731970D1F67FE5B003ACD1C /* CircleColorPickerView.swift in Sources */,
+				1731970B1F67FE42003ACD1C /* CGPoint+Extensions.swift in Sources */,
+				173197151F67FE5B003ACD1C /* SaturationPickerView.swift in Sources */,
+				173197101F67FE5B003ACD1C /* CircleColorPickerViewExtension.swift in Sources */,
+				173197111F67FE5B003ACD1C /* ColorBubbleView.swift in Sources */,
+				173197131F67FE5B003ACD1C /* ColorSampleCircleView.swift in Sources */,
+				1731970F1F67FE5B003ACD1C /* CircleColorPickerViewDelegate.swift in Sources */,
+				1731970A1F67FE42003ACD1C /* CGFloat+Extensions.swift in Sources */,
+				173197141F67FE5B003ACD1C /* RainbowCircleView.swift in Sources */,
+				1731970C1F67FE42003ACD1C /* CGVector+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17819D961F6191BC007AD1C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17819DA01F6191BC007AD1C8 /* CircleColorPickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17819D9D1F6191BC007AD1C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17819D901F6191BC007AD1C8 /* CircleColorPicker */;
+			targetProxy = 17819D9C1F6191BC007AD1C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		17819DA31F6191BC007AD1C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		17819DA41F6191BC007AD1C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		17819DA61F6191BC007AD1C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 74WC96E6CP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CircleColorPicker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laszlopinter.CircleColorPicker;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17819DA71F6191BC007AD1C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 74WC96E6CP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CircleColorPicker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laszlopinter.CircleColorPicker;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		17819DA91F6191BC007AD1C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74WC96E6CP;
+				INFOPLIST_FILE = CircleColorPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laszlopinter.CircleColorPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17819DAA1F6191BC007AD1C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74WC96E6CP;
+				INFOPLIST_FILE = CircleColorPickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laszlopinter.CircleColorPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17819D8B1F6191BC007AD1C8 /* Build configuration list for PBXProject "CircleColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17819DA31F6191BC007AD1C8 /* Debug */,
+				17819DA41F6191BC007AD1C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17819DA51F6191BC007AD1C8 /* Build configuration list for PBXNativeTarget "CircleColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17819DA61F6191BC007AD1C8 /* Debug */,
+				17819DA71F6191BC007AD1C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17819DA81F6191BC007AD1C8 /* Build configuration list for PBXNativeTarget "CircleColorPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17819DA91F6191BC007AD1C8 /* Debug */,
+				17819DAA1F6191BC007AD1C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17819D881F6191BC007AD1C8 /* Project object */;
+}
