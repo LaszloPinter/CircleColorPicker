@@ -178,8 +178,8 @@ open class CircleColorPickerView: UIView {
     }
     
     private func loadViewFromNib() -> UIView! {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+        let bundle = Bundle(for: CircleColorPickerView.self)
+        let nib = UINib(nibName: String(describing: CircleColorPickerView.self), bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         
         return view
