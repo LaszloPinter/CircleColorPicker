@@ -17,8 +17,7 @@ This is a highly customizable color picker view written in Swift.
 
   s.source       = { :git => "https://github.com/LaszloPinter/CircleColorPicker.git", :tag => "#{s.version}" }
   s.platform     = :ios, '10.0'
-  s.source_files = "CircleColorPicker", "CircleColorPicker/**/*.{h,m,swift}"  
-  s.resources = "**/*.png"
-
+  s.source_files = "CircleColorPicker/**/*.{h,m,swift}"  
+  s.resource_bundle = { 'CircleColorPicker' => 'CircleColorPicker/**/*.{storyboard,xib,png}' }
 
 end
