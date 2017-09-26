@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CircleColorPicker"
-  s.version      = "0.9.0"
+  s.version      = "0.9.3"
   s.summary      = "Fancy round color picker for iOS in Swift"
 
 
