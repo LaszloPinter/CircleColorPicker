@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CircleColorPicker"
-  s.version      = "0.9.3"
+  s.version      = "0.9.4"
   s.summary      = "Fancy round color picker for iOS in Swift"
 
 
@@ -18,6 +18,6 @@ This is a highly customizable color picker view written in Swift.
   s.source       = { :git => "https://github.com/LaszloPinter/CircleColorPicker.git", :tag => "#{s.version}" }
   s.platform     = :ios, '10.0'
   s.source_files = "CircleColorPicker/**/*.{h,m,swift}"  
-  s.resource_bundle = { 'CircleColorPicker' => 'CircleColorPicker/**/*.{storyboard,xib,png}' }
+  s.resource_bundle = { 'CircleColorPicker' => 'CircleColorPicker/**/*.{storyboard,xib,png,xcassets}' }
 
 end

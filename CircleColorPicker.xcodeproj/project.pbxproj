@@ -23,6 +23,7 @@
 		17819D9B1F6191BC007AD1C8 /* CircleColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17819D911F6191BC007AD1C8 /* CircleColorPicker.framework */; };
 		17819DA01F6191BC007AD1C8 /* CircleColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17819D9F1F6191BC007AD1C8 /* CircleColorPickerTests.swift */; };
 		17819DA21F6191BC007AD1C8 /* CircleColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 17819D941F6191BC007AD1C8 /* CircleColorPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1791D8D41F7BCB9400F7396E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1791D8D31F7BCB9400F7396E /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		17819D9A1F6191BC007AD1C8 /* CircleColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17819D9F1F6191BC007AD1C8 /* CircleColorPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPickerTests.swift; sourceTree = "<group>"; };
 		17819DA11F6191BC007AD1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1791D8D31F7BCB9400F7396E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				173196FD1F67FE41003ACD1C /* CGFloat+Extensions.swift */,
 				173196FE1F67FE42003ACD1C /* CGPoint+Extensions.swift */,
 				173196FF1F67FE42003ACD1C /* CGVector+Extensions.swift */,
+				1791D8D31F7BCB9400F7396E /* UIView+Extension.swift */,
 				173197161F67FEEF003ACD1C /* Assets.xcassets */,
 				173197001F67FE42003ACD1C /* ColorPicker */,
 				17819D941F6191BC007AD1C8 /* CircleColorPicker.h */,
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1791D8D41F7BCB9400F7396E /* UIView+Extension.swift in Sources */,
 				1731970D1F67FE5B003ACD1C /* CircleColorPickerView.swift in Sources */,
 				1731970B1F67FE42003ACD1C /* CGPoint+Extensions.swift in Sources */,
 				173197151F67FE5B003ACD1C /* SaturationPickerView.swift in Sources */,

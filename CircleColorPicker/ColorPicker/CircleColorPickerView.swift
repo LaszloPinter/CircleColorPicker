@@ -147,12 +147,14 @@ open class CircleColorPickerView: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
+        setupSaturationKnobMaskImage()
         onStart()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
+        setupSaturationKnobMaskImage()
         onStart()
     }
     
@@ -169,20 +171,22 @@ open class CircleColorPickerView: UIView {
         updateRainbowMetrics()
     }
     
+    func setupSaturationKnobMaskImage() {
+        let podBundle = Bundle(for: CircleColorPickerView.self)
+        if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
+            let bundle = Bundle(url: bundleUrl) {
+            let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
+            saturationKnob.image = retrievedImage
+        }
+    }
+    
     private func xibSetup() {
-        contentView = loadViewFromNib()
+        contentView = UIView.fromNib(named: String(describing: CircleColorPickerView.self),
+                                     bundle: Bundle(for: self.classForCoder))!
         contentView!.frame = bounds
         
         contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(contentView!)
-    }
-    
-    private func loadViewFromNib() -> UIView! {
-        let bundle = Bundle(for: CircleColorPickerView.self)
-        let nib = UINib(nibName: String(describing: CircleColorPickerView.self), bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        
-        return view
     }
     
     private func onStart() {

@@ -49,11 +49,13 @@ class ColorBubbleView: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
+        setupMaskImage()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
+        setupMaskImage()
     }
     
     func setBubbleColor(color: UIColor){
@@ -61,19 +63,21 @@ class ColorBubbleView: UIView {
         connectStringView.backgroundColor = color.withAlphaComponent(0.5)
     }
     
+    func setupMaskImage() {
+        let podBundle = Bundle(for: ColorBubbleView.self)
+        if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
+            let bundle = Bundle(url: bundleUrl) {
+            let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
+            ringMaskImageView.image = retrievedImage
+        }
+    }
+    
     private func xibSetup() {
-        contentView = loadViewFromNib()
+        contentView = UIView.fromNib(named: String(describing: ColorBubbleView.self),
+                                     bundle: Bundle(for: self.classForCoder))!
         contentView!.frame = bounds
         
         contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(contentView!)
-    }
-    
-    private func loadViewFromNib() -> UIView! {
-        let bundle = Bundle(for: ColorBubbleView.self)
-        let nib = UINib(nibName: String(describing: ColorBubbleView.self), bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        
-        return view
     }
 }
