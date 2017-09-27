@@ -36,7 +36,7 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjQ-x6-lAG">
                     <rect key="frame" x="238" y="184" width="32" height="32"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-IU-ecH">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ringMask" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-IU-ecH">
                             <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
@@ -65,4 +65,7 @@
             <point key="canvasLocation" x="25.5" y="-82"/>
         </view>
     </objects>
+    <resources>
+        <image name="ringMask" width="50" height="50"/>
+    </resources>
 </document>

@@ -74,7 +74,7 @@ class ColorBubbleView: UIView {
     
     private func xibSetup() {
         contentView = UIView.fromNib(named: String(describing: ColorBubbleView.self),
-                                     bundle: Bundle(for: self.classForCoder))!
+                                     bundle: Bundle(for: self.classForCoder), owner: self)!
         contentView!.frame = bounds
         
         contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]

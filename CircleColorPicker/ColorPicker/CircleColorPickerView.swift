@@ -182,7 +182,7 @@ open class CircleColorPickerView: UIView {
     
     private func xibSetup() {
         contentView = UIView.fromNib(named: String(describing: CircleColorPickerView.self),
-                                     bundle: Bundle(for: self.classForCoder))!
+                                     bundle: Bundle(for: self.classForCoder), owner: self)!
         contentView!.frame = bounds
         
         contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]

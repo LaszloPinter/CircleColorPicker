@@ -23,12 +23,12 @@ import Foundation
 
 extension UIView {
     
-    static func fromNib(named nibName: String, bundle podBundle: Bundle) -> UIView? {
+    static func fromNib(named nibName: String, bundle podBundle: Bundle, owner: UIView) -> UIView? {
         
         if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
             let bundle = Bundle(url: bundleUrl) {
             let nib = UINib(nibName: nibName, bundle: bundle)
-            let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+            let view = nib.instantiate(withOwner: owner, options: nil).first as! UIView
             return view
         }
         

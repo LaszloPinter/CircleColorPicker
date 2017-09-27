@@ -66,7 +66,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-zt-Pg8">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ringMask" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-zt-Pg8">
                     <rect key="frame" x="168" y="254" width="24" height="24"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -101,4 +101,7 @@
             <point key="canvasLocation" x="16.5" y="-102.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ringMask" width="50" height="50"/>
+    </resources>
 </document>
