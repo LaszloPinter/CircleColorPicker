@@ -245,12 +245,4 @@ extension CircleColorPickerView {
     func getRadians(for hue: CGFloat) -> CGFloat {
         return hue * 2 * CGFloat.pi
     }
-    
-    func getColor(at radians: CGFloat) -> CGColor {
-        return UIColor(hue: rainbowCircleView.getHue(at: radians), saturation: saturation, brightness: 1, alpha: 1).cgColor
-    }
-    
-    func getCurrentSaturation() -> CGFloat {
-        return saturation
-    }
 }
