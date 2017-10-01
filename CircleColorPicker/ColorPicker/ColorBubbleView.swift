@@ -58,6 +58,12 @@ class ColorBubbleView: UIView {
         setupMaskImage()
     }
     
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupMaskImage()
+    }
+
+    
     func setBubbleColor(color: UIColor){
         bubbleBackgroundView.backgroundColor = color
         connectStringView.backgroundColor = color.withAlphaComponent(0.5)

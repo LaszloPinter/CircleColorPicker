@@ -158,6 +158,11 @@ open class CircleColorPickerView: UIView {
         onStart()
     }
     
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupSaturationKnobMaskImage()
+    }
+    
     open override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         if newWindow != nil {
