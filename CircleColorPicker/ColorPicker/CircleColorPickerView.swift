@@ -147,20 +147,21 @@ open class CircleColorPickerView: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
-        setupSaturationKnobMaskImage()
+        setupMaskImages()
         onStart()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
-        setupSaturationKnobMaskImage()
+        setupMaskImages()
         onStart()
     }
     
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setupSaturationKnobMaskImage()
+        xibSetup()
+        setupMaskImages()
     }
     
     open override func willMove(toWindow newWindow: UIWindow?) {
@@ -176,12 +177,13 @@ open class CircleColorPickerView: UIView {
         updateRainbowMetrics()
     }
     
-    func setupSaturationKnobMaskImage() {
+    func setupMaskImages() {
         let podBundle = Bundle(for: CircleColorPickerView.self)
         if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
             let bundle = Bundle(url: bundleUrl) {
             let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
             saturationKnob.image = retrievedImage
+            colorBubbleView.ringMaskImageView.image = retrievedImage
         }
     }
     

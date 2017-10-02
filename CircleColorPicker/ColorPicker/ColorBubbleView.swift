@@ -49,33 +49,16 @@ class ColorBubbleView: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
-        setupMaskImage()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
-        setupMaskImage()
     }
-    
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setupMaskImage()
-    }
-
     
     func setBubbleColor(color: UIColor){
         bubbleBackgroundView.backgroundColor = color
         connectStringView.backgroundColor = color.withAlphaComponent(0.5)
-    }
-    
-    func setupMaskImage() {
-        let podBundle = Bundle(for: ColorBubbleView.self)
-        if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
-            let bundle = Bundle(url: bundleUrl) {
-            let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
-            ringMaskImageView.image = retrievedImage
-        }
     }
     
     private func xibSetup() {

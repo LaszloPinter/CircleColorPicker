@@ -21,7 +21,6 @@
 
 import UIKit
 
-@IBDesignable
 internal class RainbowCircleView: UIView {
     var rainbowRadius: CGFloat = 100.0 {
         didSet{

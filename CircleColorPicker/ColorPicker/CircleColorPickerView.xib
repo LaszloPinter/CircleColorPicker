@@ -38,20 +38,14 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3d-f4-0hn" customClass="ColorBubbleView" customModule="CircleColorPicker" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="360"/>
-                    <subviews>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0L-r4-5Ke" customClass="ColorSampleCircleView" customModule="CircleColorPicker" customModuleProvider="target">
-                            <rect key="frame" x="130" y="130" width="100" height="100"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="H0L-r4-5Ke" secondAttribute="height" id="jSF-xr-Ziy"/>
-                                <constraint firstAttribute="height" constant="100" id="jlr-x7-yFb"/>
-                            </constraints>
-                        </view>
-                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0L-r4-5Ke" customClass="ColorSampleCircleView" customModule="CircleColorPicker" customModuleProvider="target">
+                    <rect key="frame" x="130" y="130" width="100" height="100"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="H0L-r4-5Ke" firstAttribute="centerX" secondItem="r3d-f4-0hn" secondAttribute="centerX" id="Ewy-gJ-bU6"/>
-                        <constraint firstItem="H0L-r4-5Ke" firstAttribute="centerY" secondItem="r3d-f4-0hn" secondAttribute="centerY" id="ibw-6y-owH"/>
+                        <constraint firstAttribute="width" secondItem="H0L-r4-5Ke" secondAttribute="height" id="jSF-xr-Ziy"/>
+                        <constraint firstAttribute="height" constant="100" id="jlr-x7-yFb"/>
                     </constraints>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-Ge-0y1" customClass="SaturationPickerView" customModule="CircleColorPicker" customModuleProvider="target">
@@ -86,10 +80,12 @@
                 <constraint firstItem="SSt-ku-nHb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="831-dP-vVD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SSt-ku-nHb" secondAttribute="bottom" id="86X-Bn-PNZ"/>
                 <constraint firstItem="SSt-ku-nHb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8XE-zU-Dre"/>
+                <constraint firstItem="H0L-r4-5Ke" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9bc-4C-ZyB"/>
                 <constraint firstItem="oyV-zt-Pg8" firstAttribute="centerY" secondItem="NdG-Ge-0y1" secondAttribute="centerY" id="AOy-oU-nce"/>
                 <constraint firstItem="r3d-f4-0hn" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="AU6-60-GT5"/>
                 <constraint firstItem="NdG-Ge-0y1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.4" constant="14" id="AdS-iK-N61"/>
                 <constraint firstItem="r3d-f4-0hn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OgA-mg-lec"/>
+                <constraint firstItem="H0L-r4-5Ke" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SgJ-ee-HmO"/>
                 <constraint firstItem="NdG-Ge-0y1" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.4" id="Zjg-99-MFN"/>
                 <constraint firstItem="r3d-f4-0hn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cTo-Dx-s8q"/>
                 <constraint firstItem="oyV-zt-Pg8" firstAttribute="centerX" secondItem="NdG-Ge-0y1" secondAttribute="centerX" id="oJ1-57-BTO"/>

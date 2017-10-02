@@ -21,7 +21,6 @@
 
 import UIKit
 
-@IBDesignable
 internal class ColorSampleCircleView: UIView {
 
     internal var ringWidth: CGFloat = 8.0 {
@@ -55,12 +54,6 @@ internal class ColorSampleCircleView: UIView {
         resizeInnerCircle()
         self.layer.cornerRadius = self.bounds.width * 0.5
     }
-    /*override func willMove(toWindow newWindow: UIWindow?) {
-        if newWindow != nil {
-            self.layer.cornerRadius = fullRadius
-            resizeInnerCircle()
-        }
-    }*/
  
     func setSampleColor(color: UIColor){
         innerCircle.backgroundColor = color

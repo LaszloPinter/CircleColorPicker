@@ -21,7 +21,6 @@
 
 import UIKit
 
-@IBDesignable
 class SaturationPickerView: UIView {
     
     var saturationMask: UIView!
@@ -29,13 +28,11 @@ class SaturationPickerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupMaskView()
-
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupMaskView()
-
     }
     
     func setupMaskView() {
