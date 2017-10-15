@@ -218,9 +218,10 @@ open class CircleColorPickerView: UIView {
     
     private func updateAllViews() {
         let color = UIColor.init(cgColor: self.color)
+        let fullSaturationColor = UIColor.init(hue: self.hue, saturation: 1, brightness: 1, alpha: 1)
         colorSampleView.setSampleColor(color: color)
-        colorBubbleView.setBubbleColor(color: UIColor.init(hue: self.hue, saturation: 1, brightness: 1, alpha: 1))
-        saturationPickerView.backgroundColor = color
+        colorBubbleView.setBubbleColor(color: fullSaturationColor)
+        saturationPickerView.backgroundColor = fullSaturationColor
         saturationKnob.backgroundColor = color
     }
     
