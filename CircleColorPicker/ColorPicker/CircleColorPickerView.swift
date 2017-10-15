@@ -229,7 +229,7 @@ open class CircleColorPickerView: UIView {
     }
     
     private func setKnobPositionForCurrentSaturation(){
-        saturationKnobPosition.constant = (hue - 0.5) * saturationPickerView.bounds.width
+        saturationKnobPosition.constant = (saturation - 0.5) * saturationPickerView.bounds.width
     }
 }
 
