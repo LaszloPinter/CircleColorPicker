@@ -160,7 +160,6 @@ open class CircleColorPickerView: UIView {
     
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        xibSetup()
         setupMaskImages()
     }
     
