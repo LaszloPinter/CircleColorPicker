@@ -176,13 +176,18 @@ open class CircleColorPickerView: UIView {
         updateRainbowMetrics()
     }
     
-    func setupMaskImages() {
-        let podBundle = Bundle(for: CircleColorPickerView.self)
-        if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
-            let bundle = Bundle(url: bundleUrl) {
-            let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
-            saturationKnob.image = retrievedImage
-            colorBubbleView.ringMaskImageView.image = retrievedImage
+    func setupMaskImages(image: UIImage? = Optional.none) {
+        if let image = image {
+            saturationKnob.image = image
+            colorBubbleView.ringMaskImageView.image = image
+        }else {
+            let podBundle = Bundle(for: CircleColorPickerView.self)
+            if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
+                let bundle = Bundle(url: bundleUrl) {
+                let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
+                saturationKnob.image = retrievedImage
+                colorBubbleView.ringMaskImageView.image = retrievedImage
+            }
         }
     }
     
@@ -200,12 +205,12 @@ open class CircleColorPickerView: UIView {
         updateRainbowMetrics()
     }
     
-    func updateBubbleMetrics() {
+    private func updateBubbleMetrics() {
         colorBubbleView.bubbleRadius = bubbleRadius
         colorBubbleView.rainbowRadius = self.rainbowRadius 
     }
     
-    func updateRainbowMetrics() {
+    private func updateRainbowMetrics() {
         rainbowCircleView.rainbowWidth = rainbowWidth
         rainbowCircleView.rainbowRadius = self.rainbowRadius
     }
