@@ -176,7 +176,7 @@ open class CircleColorPickerView: UIView {
         updateRainbowMetrics()
     }
     
-    func setupMaskImages(image: UIImage? = Optional.none) {
+    open func setupMaskImages(image: UIImage? = Optional.none) {
         if let image = image {
             saturationKnob.image = image
             colorBubbleView.ringMaskImageView.image = image
