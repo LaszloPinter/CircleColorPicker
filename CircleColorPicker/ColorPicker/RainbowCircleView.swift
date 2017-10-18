@@ -22,6 +22,8 @@
 import UIKit
 
 internal class RainbowCircleView: UIView {
+    var rainbowImage: CGImage!
+    
     var rainbowRadius: CGFloat = 100.0 {
         didSet{
             setNeedsDisplay()
@@ -34,23 +36,36 @@ internal class RainbowCircleView: UIView {
         }
     }
     
-    func drawRainbow(onContext context: CGContext){
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        rainbowImage = drawColorCircleImage(withDiameter: Int(min(self.bounds.size.width, self.bounds.size.height)))
+    }
+    
+    func drawColorCircleImage(withDiameter diameter: Int) -> CGImage {
+        let bufferLength: Int = Int(diameter * diameter * 4)
         
-        var huePath: UIBezierPath
-        let sectors = 720
-        let sectorAngle =  CGFloat(360 / CGFloat(sectors)).degreesToRadians()
+        let bitmapData: CFMutableData = CFDataCreateMutable(nil, 0)
+        CFDataSetLength(bitmapData, CFIndex(bufferLength))
+        let bitmap = CFDataGetMutableBytePtr(bitmapData)
         
-        for  sectorNumber in  0 ... sectors{
-            let currentAngle = (CGFloat(sectorNumber) * sectorAngle)
-            huePath = UIBezierPath.init(arcCenter: origo, radius: rainbowRadius+20, startAngle: currentAngle, endAngle: currentAngle + sectorAngle*1.05, clockwise: true)
-            huePath.addLine(to: origo)
-            huePath.close()
-            
-            let color = UIColor.init(hue: getHue(at: currentAngle), saturation: 1, brightness: 1, alpha: 1).cgColor
-            context.setFillColor(color)
-            context.addPath(huePath.cgPath)
-            context.fillPath()
+        for y in 0 ... diameter {
+            for x in 0 ... diameter {
+                let angle = CGVector(point: CGPoint(x: x, y: diameter-y) - origo).angle
+                let rgbComponents = UIColor.init(hue: getHue(at: angle), saturation: 1, brightness: 1, alpha: 1).cgColor.components!
+                
+                let offset = Int(4 * (x + y * diameter))
+                bitmap?[offset] = UInt8(rgbComponents[0]*255)
+                bitmap?[offset + 1] = UInt8(rgbComponents[1]*255)
+                bitmap?[offset + 2] = UInt8(rgbComponents[2]*255)
+                bitmap?[offset + 3] = UInt8(255)
+            }
         }
+        
+        let colorSpace: CGColorSpace? = CGColorSpaceCreateDeviceRGB()
+        let dataProvider: CGDataProvider? = CGDataProvider(data: bitmapData)
+        let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo().rawValue | CGImageAlphaInfo.last.rawValue)
+        let imageRef: CGImage? = CGImage(width: diameter, height: diameter, bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: diameter * 4, space: colorSpace!, bitmapInfo: bitmapInfo, provider: dataProvider!, decode: nil, shouldInterpolate: false, intent: CGColorRenderingIntent.defaultIntent)
+        return imageRef!
     }
     
     override func draw(_ rect: CGRect) {
@@ -64,7 +79,7 @@ internal class RainbowCircleView: UIView {
         context.addPath(shapeCopyPath)
         
         context.clip(using: .winding)
-        drawRainbow(onContext: context)
+        context.draw(rainbowImage, in: self.bounds)
         context.resetClip()
     }
     
