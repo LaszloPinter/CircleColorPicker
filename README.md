@@ -81,6 +81,7 @@ colorPickerView.setupMaskImages(image: bubbleImage)
  
  where bubbleImage should be the UIImage of your choice.
  
+ 
 ### Delegation of color change
 
 To get notified when the user selects a new color on the picker implement the:
@@ -92,13 +93,13 @@ function of the `CircleColorPickerViewDelegate` interface and set the delegate o
 
 ## Whats next?
 
-###TODOs
+### TODOs
 - Carthage support
 - Swift package manager support
 - More detailed description
 - Tests
 
-###Ideas
+### Ideas
 - Should be a function the set the color of the picker with animation (just as when user picks a color)
 
 ## Apps using this library
