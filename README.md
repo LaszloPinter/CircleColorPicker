@@ -84,7 +84,7 @@ colorPickerView.setupMaskImages(image: bubbleImage)
  
  
  
-### Delegation of color change
+### Delegation of color change
 
 
 To get notified when the user selects a new color on the picker implement the:
@@ -95,7 +95,7 @@ func onColorChanged(newColor: CGColor)
 function of the `CircleColorPickerViewDelegate` interface and set the delegate of your CircleColorPickerView.
 
 
-## Whats next?
+## Whats next?
 
 
 ### TODOs
