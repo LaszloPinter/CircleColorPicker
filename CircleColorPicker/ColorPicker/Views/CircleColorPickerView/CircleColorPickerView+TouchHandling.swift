@@ -32,9 +32,6 @@ extension CircleColorPickerView { //Touch handling
         if abs(coordinate.distanceTo(self.origo) - rainbowRadius) <  bubbleRadius + rainbowWidth {
             isBubbleDragged = true
             onShouldMoveBubble(dragCoordinate: coordinate)
-        }else if shouldDragKnob(at: coordinate) {
-            isKnobDragged = true
-            onShouldMoveKnob(dragCoordinate: coordinate)
         }
     }
     
@@ -46,8 +43,6 @@ extension CircleColorPickerView { //Touch handling
         
         if isBubbleDragged {
             onShouldMoveBubble(dragCoordinate: coordinate)
-        }else if isKnobDragged {
-            onShouldMoveKnob(dragCoordinate: coordinate)
         }
     }
     
@@ -57,21 +52,6 @@ extension CircleColorPickerView { //Touch handling
         }
         
         isBubbleDragged = false
-        isKnobDragged = false
-    }
-    
-    private func onShouldMoveKnob(dragCoordinate: CGPoint) {
-        let satFrame = saturationPickerView.frame
-        
-        let knobPosition = calculateKnobPosition(forDragPosition: dragCoordinate)
-
-        saturationKnobPosition.constant = knobPosition - satFrame.midX
-        
-        UIView.animate(withDuration: animationTimeInSeconds, animations: {
-            self.layoutIfNeeded()
-            let percentage = ((self.saturationKnob.frame.midX - satFrame.midX) / satFrame.width) + 0.5
-            self.saturation = percentage
-        })
     }
     
     private func onShouldMoveBubble(dragCoordinate: CGPoint) {
@@ -84,36 +64,5 @@ extension CircleColorPickerView { //Touch handling
         })
     }
     
-    private func shouldDragKnob(at point: CGPoint) -> Bool{
-        var shouldDragIt = true
-        let satFrame = saturationPickerView.frame
-        
-        if point.x < satFrame.minX - knobDragRadius || point.x > satFrame.maxX + knobDragRadius {
-            shouldDragIt = false
-        }
-        if point.y < satFrame.midY - knobDragRadius  || point.y > satFrame.midY + knobDragRadius {
-            shouldDragIt = false
-        }
-        
-        return shouldDragIt
-    }
-    
-    private var knobDragRadius: CGFloat {
-        get{
-            return satKnobSize * 0.5 + 4
-        }
-    }
-    
-    private func calculateKnobPosition(forDragPosition: CGPoint) -> CGFloat {
-        let satFrame = saturationPickerView.frame
-        
-        var knobPosition = forDragPosition.x
-        if knobPosition < satFrame.minX {
-            knobPosition = satFrame.minX
-        }else if knobPosition > satFrame.maxX {
-            knobPosition = satFrame.maxX
-        }
-        
-        return knobPosition
-    }
+
 }

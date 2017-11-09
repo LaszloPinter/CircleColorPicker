@@ -28,7 +28,7 @@ open class CircleColorPickerView: UIView {
     
     open var animationTimeInSeconds:Double = 0.2
     
-    public var saturation: CGFloat = 0.5 {
+    public var saturation: CGFloat = 1.0 {
         didSet{
             onColorChanged()
         }
@@ -68,35 +68,9 @@ open class CircleColorPickerView: UIView {
             self.hue = h
             self.saturation = s
             setBubbleAngleForCurrentHue()
-            setKnobPositionForCurrentSaturation()
+            updateSaturationPicker()
             updateAllViews()
             onColorChanged()
-        }
-    }
-    
-    @IBInspectable
-    public var satHeight: CGFloat = 14 {
-        didSet {
-            saturationHeight.constant = satHeight
-            saturationPickerView.layer.cornerRadius = satHeight/2
-            setNeedsLayout()
-            saturationPickerView.setNeedsDisplay()
-        }
-    }
-    
-    @IBInspectable
-    public var satWidth: CGFloat = 14 {
-        didSet {
-            saturationWidth.constant = satWidth
-            setNeedsLayout()
-        }
-    }
-    
-    @IBInspectable
-    public var satPosition: CGFloat = 14 {
-        didSet {
-            saturationY.constant = satPosition
-            setNeedsLayout()
         }
     }
     
@@ -115,34 +89,18 @@ open class CircleColorPickerView: UIView {
             colorSampleView.setNeedsDisplay()
         }
     }
-    
-    @IBInspectable
-    public var satKnobSize: CGFloat = 20.0 {
-        didSet {
-            saturationKnobWidth.constant = satKnobSize
-            saturationKnob.layer.cornerRadius = satKnobSize * 0.5
-            setNeedsLayout()
-            saturationKnob.setNeedsDisplay()
-        }
-    }
 
     @IBOutlet weak var rainbowCircleView: RainbowCircleView!
     @IBOutlet weak var colorBubbleView: ColorBubbleView!
-    @IBOutlet weak var saturationPickerView: SaturationPickerView!
+    var saturationPickerView: SaturationPickerView?
     
     @IBOutlet weak var colorSampleView: ColorSampleCircleView!
-    @IBOutlet weak var saturationKnob: UIImageView!
-    
-    @IBOutlet weak var saturationHeight: NSLayoutConstraint!
-    @IBOutlet weak var saturationY: NSLayoutConstraint!
-    @IBOutlet weak var saturationWidth: NSLayoutConstraint!
+
     
     @IBOutlet weak var sampleViewRadius: NSLayoutConstraint!
-    @IBOutlet weak var saturationKnobPosition: NSLayoutConstraint!
-    @IBOutlet weak var saturationKnobWidth: NSLayoutConstraint!
+
     
     internal var isBubbleDragged = false
-    internal var isKnobDragged = false
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -178,14 +136,12 @@ open class CircleColorPickerView: UIView {
     
     public func setupMaskImages(image: UIImage? = Optional.none) {
         if let image = image {
-            saturationKnob.image = image
             colorBubbleView.ringMaskImageView.image = image
         }else {
             let podBundle = Bundle(for: CircleColorPickerView.self)
             if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
                 let bundle = Bundle(url: bundleUrl) {
                 let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
-                saturationKnob.image = retrievedImage
                 colorBubbleView.ringMaskImageView.image = retrievedImage
             }
         }
@@ -226,16 +182,16 @@ open class CircleColorPickerView: UIView {
         let fullSaturationColor = UIColor.init(hue: self.hue, saturation: 1, brightness: 1, alpha: 1)
         colorSampleView.setSampleColor(color: color)
         colorBubbleView.setBubbleColor(color: fullSaturationColor)
-        saturationPickerView.backgroundColor = fullSaturationColor
-        saturationKnob.backgroundColor = color
+        saturationPickerView?.backgroundColor = fullSaturationColor
+        saturationPickerView?.bubbleView.backgroundColor = color
     }
     
     private func setBubbleAngleForCurrentHue(){
         self.colorBubbleView.transform = CGAffineTransform(rotationAngle: getRadians(for: hue))
     }
     
-    private func setKnobPositionForCurrentSaturation(){
-        saturationKnobPosition.constant = (saturation - 0.5) * saturationPickerView.bounds.width
+    private func updateSaturationPicker(){
+        //saturationKnobPosition.constant = (saturation - 0.5) * saturationPickerView.bounds.width
     }
 }
 
