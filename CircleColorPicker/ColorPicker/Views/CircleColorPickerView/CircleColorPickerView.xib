@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +17,6 @@
                 <outlet property="colorSampleView" destination="H0L-r4-5Ke" id="ywV-uk-21c"/>
                 <outlet property="rainbowCircleView" destination="SSt-ku-nHb" id="FmU-08-x7V"/>
                 <outlet property="sampleViewRadius" destination="jlr-x7-yFb" id="uLF-hW-J3Q"/>
-                <outlet property="saturationHeight" destination="6EA-zJ-ciF" id="Rld-4b-7AU"/>
-                <outlet property="saturationKnob" destination="oyV-zt-Pg8" id="RU2-KM-KHF"/>
-                <outlet property="saturationKnobPosition" destination="oJ1-57-BTO" id="Xa0-L9-ILe"/>
-                <outlet property="saturationKnobWidth" destination="CDc-11-PTW" id="2WW-OP-la4"/>
-                <outlet property="saturationPickerView" destination="NdG-Ge-0y1" id="4iH-xM-wka"/>
-                <outlet property="saturationWidth" destination="Zjg-99-MFN" id="AkC-GW-b1f"/>
-                <outlet property="saturationY" destination="AdS-iK-N61" id="UDC-Kd-FJh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,31 +40,6 @@
                         <constraint firstAttribute="height" constant="100" id="jlr-x7-yFb"/>
                     </constraints>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-Ge-0y1" customClass="SaturationPickerView" customModule="CircleColorPicker" customModuleProvider="target">
-                    <rect key="frame" x="108" y="259" width="144" height="14"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="14" id="6EA-zJ-ciF"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="7"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ringMask" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-zt-Pg8">
-                    <rect key="frame" x="168" y="254" width="24" height="24"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="24" id="CDc-11-PTW"/>
-                        <constraint firstAttribute="width" secondItem="oyV-zt-Pg8" secondAttribute="height" id="mXn-3y-7Dg"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="12"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -81,23 +48,15 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SSt-ku-nHb" secondAttribute="bottom" id="86X-Bn-PNZ"/>
                 <constraint firstItem="SSt-ku-nHb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8XE-zU-Dre"/>
                 <constraint firstItem="H0L-r4-5Ke" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9bc-4C-ZyB"/>
-                <constraint firstItem="oyV-zt-Pg8" firstAttribute="centerY" secondItem="NdG-Ge-0y1" secondAttribute="centerY" id="AOy-oU-nce"/>
                 <constraint firstItem="r3d-f4-0hn" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="AU6-60-GT5"/>
-                <constraint firstItem="NdG-Ge-0y1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.4" constant="14" id="AdS-iK-N61"/>
                 <constraint firstItem="r3d-f4-0hn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OgA-mg-lec"/>
                 <constraint firstItem="H0L-r4-5Ke" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SgJ-ee-HmO"/>
-                <constraint firstItem="NdG-Ge-0y1" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.4" id="Zjg-99-MFN"/>
                 <constraint firstItem="r3d-f4-0hn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cTo-Dx-s8q"/>
-                <constraint firstItem="oyV-zt-Pg8" firstAttribute="centerX" secondItem="NdG-Ge-0y1" secondAttribute="centerX" id="oJ1-57-BTO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SSt-ku-nHb" secondAttribute="trailing" id="xSM-cx-miE"/>
-                <constraint firstItem="NdG-Ge-0y1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xYZ-Y8-IHq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="16.5" y="-102.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="ringMask" width="50" height="50"/>
-    </resources>
 </document>
