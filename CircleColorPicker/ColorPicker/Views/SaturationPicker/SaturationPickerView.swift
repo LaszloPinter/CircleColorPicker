@@ -21,19 +21,36 @@
 
 import UIKit
 
+public protocol SaturationPickerDelegate: class {
+    func onSaturationChanged(_ saturation: CGFloat)
+}
+
 @IBDesignable
 open class SaturationPickerView: UIView {
     open var animationTimeInSeconds:Double = 0.2
-    internal var isBubbleDragged = false
+    open weak var delegate: SaturationPickerDelegate?
+    
+    internal var storedSaturation: CGFloat = 0.5
+    open var saturation: CGFloat {
+        get{
+            return storedSaturation
+        }
+        set{
+            self.storedSaturation = newValue
+            if isVertical {
+                bubbleCenterY.constant = -(storedSaturation-0.5) * (self.bounds.size.height)
+            }else {
+                bubbleCenterX.constant = (storedSaturation-0.5) * (self.bounds.size.width)
+            }
+        }
 
-    var saturationMask: SaturationMask!
+    }
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var bubbleView: UIImageView!
     @IBOutlet weak var bubbleWidth: NSLayoutConstraint!
     @IBOutlet weak var bubbleCenterX: NSLayoutConstraint!
     @IBOutlet weak var bubbleCenterY: NSLayoutConstraint!
-    
-    public var saturation: CGFloat = 0.5
     
     @IBInspectable var isVertical: Bool = false {
         didSet {
@@ -56,16 +73,24 @@ open class SaturationPickerView: UIView {
         }
     }
     
+    internal var isBubbleDragged = false
+    private var saturationMask: SaturationMask!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        xibSetup()
-        setupSaturationMaskView()
+        setupInitialState()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setupInitialState()
+    }
+    
+    private func setupInitialState() {
         xibSetup()
         setupSaturationMaskView()
+        setupBubbleMaskImage()
+        
     }
     
     private func xibSetup() {
@@ -81,7 +106,8 @@ open class SaturationPickerView: UIView {
         saturationMask = SaturationMask(frame: CGRect.init(origin: CGPoint.zero, size: self.bounds.size))
         saturationMask.backgroundColor = UIColor.clear
         saturationMask.isVertical = isVertical
-        contentView.addSubview(saturationMask)
+        saturationMask.setNeedsDisplay()
+        contentView.insertSubview(saturationMask, belowSubview: bubbleView)
     }
     
     public func setupBubbleMaskImage(image: UIImage? = Optional.none) {
@@ -99,6 +125,11 @@ open class SaturationPickerView: UIView {
     
     override open func layoutSubviews() {
         saturationMask.frame = CGRect.init(origin: CGPoint.zero, size: self.bounds.size)
+        let cornerRadius = min(self.bounds.size.width, self.bounds.size.height) * 0.5
+        contentView.layer.cornerRadius = cornerRadius
+        self.layer.cornerRadius = cornerRadius
+        saturationMask.layer.cornerRadius = cornerRadius
+        saturationMask.clipsToBounds = true
     }
     
     class SaturationMask: UIView {
@@ -136,5 +167,4 @@ open class SaturationPickerView: UIView {
             drawScale(context: context)
         }
     }
-    
 }

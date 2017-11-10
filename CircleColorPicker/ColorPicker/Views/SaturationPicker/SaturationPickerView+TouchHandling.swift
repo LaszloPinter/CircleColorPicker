@@ -60,65 +60,73 @@ extension SaturationPickerView {
     }
     
     private func shouldDragBubble(at point: CGPoint) -> Bool{
-        var shouldDragIt = true
-        let satFrame = self.frame
-        
-        if point.x < satFrame.minX - bubbleDragRadius || point.x > satFrame.maxX + bubbleDragRadius {
-            shouldDragIt = false
-        }
-        if point.y < satFrame.midY - bubbleDragRadius  || point.y > satFrame.midY + bubbleDragRadius {
-            shouldDragIt = false
-        }
-        
-        return shouldDragIt
+        return hitTest(point, with: nil) != nil
     }
     
     private func onShouldMoveBubble(dragCoordinate: CGPoint) {
-        let satFrame = self.frame
+        let bounds = self.bounds
         
         if isVertical {
             let bubblePosition = calculateBubbleYPosition(forDragPosition: dragCoordinate)
-            bubbleCenterY.constant = bubblePosition - satFrame.midY
+            bubbleCenterY.constant = bubblePosition - bounds.midY
         }else {
             let bubblePosition = calculateBubbleXPosition(forDragPosition: dragCoordinate)
-            bubbleCenterX.constant = bubblePosition - satFrame.midX
+            bubbleCenterX.constant = bubblePosition - bounds.midX
         }
 
         UIView.animate(withDuration: animationTimeInSeconds, animations: {
             self.layoutIfNeeded()
             var percentage: CGFloat
             if self.isVertical {
-               percentage = ((self.bubbleView.frame.midY - satFrame.midY) / satFrame.height) + 0.5
+               percentage = (-(self.bubbleView.frame.midY - bounds.midY) / bounds.height) + 0.5
             }else {
-               percentage = ((self.bubbleView.frame.midX - satFrame.midX) / satFrame.width) + 0.5
+               percentage = ((self.bubbleView.frame.midX - bounds.midX) / bounds.width) + 0.5
             }
-            self.saturation = percentage
+            self.storedSaturation = percentage
+            self.delegate?.onSaturationChanged(self.storedSaturation)
         })
     }
     
     private func calculateBubbleXPosition(forDragPosition: CGPoint) -> CGFloat {
-        let satFrame = self.frame
+        let bounds = self.bounds
         
         var bubblePosition = forDragPosition.x
-        if bubblePosition < satFrame.minX {
-            bubblePosition = satFrame.minX
-        }else if bubblePosition > satFrame.maxX {
-            bubblePosition = satFrame.maxX
+        if bubblePosition < bounds.minX {
+            bubblePosition = bounds.minX
+        }else if bubblePosition > bounds.maxX {
+            bubblePosition = bounds.maxX
         }
         
         return bubblePosition
     }
     
     private func calculateBubbleYPosition(forDragPosition: CGPoint) -> CGFloat {
-        let satFrame = self.frame
+        let bounds = self.bounds
         
         var bubblePosition = forDragPosition.y
-        if bubblePosition < satFrame.minY {
-            bubblePosition = satFrame.minY
-        }else if bubblePosition > satFrame.maxY {
-            bubblePosition = satFrame.maxY
+        if bubblePosition < bounds.minY {
+            bubblePosition = bounds.minY
+        }else if bubblePosition > bounds.maxY {
+            bubblePosition = bounds.maxY
         }
         
         return bubblePosition
     }
+    
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        
+        if isHidden || alpha == 0 {
+            return nil
+        }
+        
+        let frame = self.bounds
+        let range = bubbleWidth.constant * 0.5
+        let rect = CGRect(x: frame.minX-range  , y: frame.minY-range, width: frame.width+range*2, height: frame.height+range*2)
+        
+        if rect.contains(point) {
+            return self
+        }
+        return nil
+    }
+    
 }

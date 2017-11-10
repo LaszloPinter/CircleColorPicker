@@ -61,6 +61,7 @@ extension CircleColorPickerView { //Touch handling
             self.colorBubbleView.transform = CGAffineTransform(rotationAngle: dragAngle)
             let currentRads:CGFloat = CGFloat(atan2f(Float(self.colorBubbleView.transform.b), Float(self.colorBubbleView.transform.a)))
             self.hue = self.rainbowCircleView.getHue(at: currentRads)
+            self.delegate?.onColorChanged(newColor: self.color)
         })
     }
     

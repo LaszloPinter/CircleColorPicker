@@ -39,7 +39,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="IVH-EY-dCW" firstAttribute="width" secondItem="IVH-EY-dCW" secondAttribute="height" id="Qr5-I3-y0j"/>
                 <constraint firstItem="IVH-EY-dCW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kxI-3f-HLY"/>
