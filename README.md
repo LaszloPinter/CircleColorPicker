@@ -54,12 +54,8 @@ Add a UIView to one of your ViewControllers on interface builder and set it's cl
 
 - *Rainbow Width* is the width of the color ring. Default value is 8.0.
 - *Bubble Radius* is the radius of the color bubble on the ring. (18 by default)
-- *Saturation Height* is the height of the saturation picker line. (14 by default)
-- *Saturation Width* is the offset in the length of the saturation line. Saturation line is 40% of the width of the view by default. (14 by default)
-- *Saturation Position* is the offset of the saturation pickers Y position. (14 by default)
 - *Center Diameter* is the diameter of the color sample at the center of the picker. (80 by default)
 - *Center Ring Width* is the width translucent edge of the color sample view. (8 by default)
-- *Saturation Knob Size* is the size of the 'bubble' on the saturation selector. (20 by default)
 
 ### Public properties
 
@@ -67,9 +63,11 @@ These values have both getters and setters:
 
 - color: *(CGColor)* is the current color of the picker
 - hue: *(CGFloat)* is the current hue value of the selected color
-- saturation: *(CGFloat)* is the current saturation value of the selected color
 - animation time: *(Double)* is the duration of the animation when user selects a new color.
 - delegate : *(weak CircleColorPickerViewDelegate?)* is the delegate of your picker.
+- saturationPickerView: *(weak SaturationPickerView?)* is an optional saturation picker that works with the
+color circle. Enables saturation selection.
+- saturation: *(CGFloat)* is the current saturation value of the selected color. (Only works if saturationPickerView is assigned otherwise always returns 1.)
 
 This means that you can make animations faster or slower as you prefer.
 
