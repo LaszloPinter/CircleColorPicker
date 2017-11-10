@@ -94,7 +94,7 @@ open class CircleColorPickerView: UIView {
 
     @IBOutlet weak var rainbowCircleView: RainbowCircleView!
     @IBOutlet weak var colorBubbleView: ColorBubbleView!
-    open var saturationPickerView: SaturationPickerView? {
+    open weak var saturationPickerView: SaturationPickerView? {
         didSet {
             saturationPickerView?.delegate = self
             updateAllViews()
