@@ -47,7 +47,7 @@ open class SaturationPickerView: UIView {
     }
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var bubbleView: UIImageView!
+    @IBOutlet open weak var bubbleView: UIImageView!
     @IBOutlet weak var bubbleWidth: NSLayoutConstraint!
     @IBOutlet weak var bubbleCenterX: NSLayoutConstraint!
     @IBOutlet weak var bubbleCenterY: NSLayoutConstraint!
