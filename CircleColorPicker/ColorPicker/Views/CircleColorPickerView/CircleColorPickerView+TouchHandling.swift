@@ -55,8 +55,7 @@ extension CircleColorPickerView { //Touch handling
     }
     
     private func onShouldMoveBubble(dragCoordinate: CGPoint) {
-        let dragAngle = CGVector(point: dragCoordinate - origo).angle
-        
+        let dragAngle = calculateDesiredAngleFor(dragCoordinate: dragCoordinate)
         UIView.animate(withDuration: animationTimeInSeconds, animations: {
             self.colorBubbleView.transform = CGAffineTransform(rotationAngle: dragAngle)
             let currentRads:CGFloat = CGFloat(atan2f(Float(self.colorBubbleView.transform.b), Float(self.colorBubbleView.transform.a)))
@@ -65,5 +64,23 @@ extension CircleColorPickerView { //Touch handling
         })
     }
     
-
+    private func calculateDesiredAngleFor(dragCoordinate: CGPoint) -> CGFloat{
+        let deltaInDegrees:Float = 5
+        let sectorSizeInDegrees:Float = 60
+        var dragAngle = CGVector(point: dragCoordinate - origo).angle.radiansToDegrees()
+        if dragAngle < 0 {
+            dragAngle = dragAngle + 360
+        }
+        
+        let mod = fmodf(Float(dragAngle), sectorSizeInDegrees)
+        print(mod)
+        let partition = Int(Float(dragAngle) / sectorSizeInDegrees)
+        if mod < deltaInDegrees {
+            dragAngle = CGFloat(partition) * CGFloat(sectorSizeInDegrees)
+        }else if mod > 60 - deltaInDegrees {
+            dragAngle = CGFloat(partition+1) * CGFloat(sectorSizeInDegrees)
+        }
+        dragAngle = dragAngle.degreesToRadians()
+        return dragAngle
+    }
 }
