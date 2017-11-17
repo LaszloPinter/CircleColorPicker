@@ -27,6 +27,7 @@ open class CircleColorPickerView: UIView {
     public weak var delegate: CircleColorPickerViewDelegate?
     
     open var animationTimeInSeconds:Double = 0.2
+    open var shouldBrightnessAffectColorSample = true
     
     public var saturation: CGFloat {
         get {
@@ -178,7 +179,7 @@ open class CircleColorPickerView: UIView {
     
     private func xibSetup() {
         contentView = UIView.fromNib(named: String(describing: CircleColorPickerView.self),
-                                     bundle: Bundle(for: self.classForCoder), owner: self)!
+                                     bundle: Bundle(for: CircleColorPickerView.self), owner: self)!
         contentView!.frame = bounds
         
         contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -206,7 +207,12 @@ open class CircleColorPickerView: UIView {
         let colorWithSaturation = UIColor.init(hue: self.hue, saturation: saturation, brightness: 1, alpha: 1)
         let colorWithBrightness = UIColor.init(hue: self.hue, saturation: 1, brightness: brightness, alpha: 1)
 
-        colorSampleView.setSampleColor(color: color)
+        if shouldBrightnessAffectColorSample {
+            colorSampleView.setSampleColor(color: color)
+        }else {
+            colorSampleView.setSampleColor(color: colorWithSaturation)
+        }
+        
         colorBubbleView.setBubbleColor(color: colorWithOnlyHue)
         saturationPickerView?.backgroundColor = colorWithOnlyHue
         brightnessPickerView?.backgroundColor = colorWithOnlyHue

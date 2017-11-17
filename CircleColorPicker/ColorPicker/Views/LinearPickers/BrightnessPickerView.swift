@@ -11,22 +11,22 @@ import UIKit
 open class BrightnessPickerView: LinearPickerView {
 
     open override func handleOrientationChange() {
-        (frontLayerView as! SaturationPickerView).isVertical = isVertical
+        (frontLayerView as! BrightnessMask).isVertical = isVertical
     }
     
     open override func createFrontLayerView() -> UIView{
-        let frontLayer = SaturationMask(frame: CGRect.init(origin: CGPoint.zero, size: self.bounds.size))
+        let frontLayer = BrightnessMask(frame: CGRect.init(origin: CGPoint.zero, size: self.bounds.size))
         frontLayer.isVertical = isVertical
         return frontLayer
     }
     
-    class SaturationMask: UIView {
+    class BrightnessMask: UIView {
         public var isVertical = false
         
         func drawScale(context: CGContext){
             
-            let startColor = UIColor.init(hue: 1, saturation: 0, brightness: 0, alpha: 0).cgColor
-            let endColor   = UIColor.init(hue: 1, saturation: 0, brightness: 0, alpha: 1).cgColor
+            let startColor = UIColor.init(hue: 1, saturation: 0, brightness: 0, alpha: 1).cgColor
+            let endColor   = UIColor.init(hue: 1, saturation: 0, brightness: 0, alpha: 0).cgColor
             
             let colorSpace = CGColorSpaceCreateDeviceRGB()
             let colors = [startColor, endColor] as CFArray

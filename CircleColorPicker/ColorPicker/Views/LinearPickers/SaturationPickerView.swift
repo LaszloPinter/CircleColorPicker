@@ -11,7 +11,7 @@ import UIKit
 open class SaturationPickerView: LinearPickerView {
 
     open override func handleOrientationChange() {
-        (frontLayerView as! SaturationPickerView).isVertical = isVertical
+        (frontLayerView as! SaturationMask).isVertical = isVertical
     }
     
     open override func createFrontLayerView() -> UIView{

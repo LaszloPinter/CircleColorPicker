@@ -6,3 +6,5 @@ screenshots/\.DS_Store
 *.xcuserstate
 
 CircleColorPicker\.xcodeproj/project\.xcworkspace/xcuserdata/laszlopinter\.xcuserdatad/
+
+CircleColorPicker\.xcodeproj/xcuserdata/laszlopinter\.xcuserdatad/xcdebugger/
