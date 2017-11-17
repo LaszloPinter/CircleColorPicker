@@ -30,10 +30,20 @@ open class CircleColorPickerView: UIView {
     
     public var saturation: CGFloat {
         get {
-            return saturationPickerView?.saturation ?? 1
+            return saturationPickerView?.value ?? 1
         }
         set {
-            saturationPickerView?.saturation = newValue
+            saturationPickerView?.value = newValue
+            updateAllViews()
+        }
+    }
+    
+    public var brightness: CGFloat {
+        get {
+            return brightnessPickerView?.value ?? 1
+        }
+        set {
+            brightnessPickerView?.value = newValue
             updateAllViews()
         }
     }
@@ -62,7 +72,7 @@ open class CircleColorPickerView: UIView {
     @IBInspectable
     public var color: CGColor {
         get {
-            return UIColor(hue: hue, saturation: saturation, brightness: 1, alpha: 1).cgColor
+            return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1).cgColor
         }
         
         set {
@@ -71,6 +81,7 @@ open class CircleColorPickerView: UIView {
             color.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
             self.hue = h
             self.saturation = s
+            self.brightness = b
             setBubbleAngleForCurrentHue()
             updateAllViews()
         }
@@ -96,7 +107,20 @@ open class CircleColorPickerView: UIView {
     @IBOutlet weak var colorBubbleView: ColorBubbleView!
     open weak var saturationPickerView: SaturationPickerView? {
         didSet {
-            saturationPickerView?.delegate = self
+            saturationPickerView?.onValueChange = { _ in
+                self.updateAllViews()
+                self.delegate?.onColorChanged(newColor: self.color)
+            }
+            updateAllViews()
+        }
+    }
+    
+    open weak var brightnessPickerView: BrightnessPickerView? {
+        didSet {
+            brightnessPickerView?.onValueChange = { _ in
+                self.updateAllViews()
+                self.delegate?.onColorChanged(newColor: self.color)
+            }
             updateAllViews()
         }
     }
@@ -178,11 +202,16 @@ open class CircleColorPickerView: UIView {
     
     private func updateAllViews() {
         let color = UIColor.init(cgColor: self.color)
-        let fullSaturationColor = UIColor.init(hue: self.hue, saturation: 1, brightness: 1, alpha: 1)
+        let colorWithOnlyHue = UIColor.init(hue: self.hue, saturation: 1, brightness: 1, alpha: 1)
+        let colorWithSaturation = UIColor.init(hue: self.hue, saturation: saturation, brightness: 1, alpha: 1)
+        let colorWithBrightness = UIColor.init(hue: self.hue, saturation: 1, brightness: brightness, alpha: 1)
+
         colorSampleView.setSampleColor(color: color)
-        colorBubbleView.setBubbleColor(color: fullSaturationColor)
-        saturationPickerView?.backgroundColor = fullSaturationColor
-        saturationPickerView?.bubbleView.backgroundColor = color
+        colorBubbleView.setBubbleColor(color: colorWithOnlyHue)
+        saturationPickerView?.backgroundColor = colorWithOnlyHue
+        brightnessPickerView?.backgroundColor = colorWithOnlyHue
+        saturationPickerView?.bubbleView.backgroundColor = colorWithSaturation
+        brightnessPickerView?.bubbleView.backgroundColor = colorWithBrightness
     }
     
     private func setBubbleAngleForCurrentHue(){
@@ -207,12 +236,5 @@ extension CircleColorPickerView {
     
     func getRadians(for hue: CGFloat) -> CGFloat {
         return hue * 2 * CGFloat.pi
-    }
-}
-
-extension CircleColorPickerView: SaturationPickerDelegate {
-    public func onSaturationChanged(_ saturation: CGFloat) {
-        updateAllViews()
-        delegate?.onColorChanged(newColor: self.color)
     }
 }

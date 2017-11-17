@@ -18,14 +18,16 @@
 		173197121F67FE5B003ACD1C /* ColorBubbleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173197061F67FE42003ACD1C /* ColorBubbleView.xib */; };
 		173197131F67FE5B003ACD1C /* ColorSampleCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197071F67FE42003ACD1C /* ColorSampleCircleView.swift */; };
 		173197141F67FE5B003ACD1C /* RainbowCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197081F67FE42003ACD1C /* RainbowCircleView.swift */; };
-		173197151F67FE5B003ACD1C /* SaturationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197091F67FE42003ACD1C /* SaturationPickerView.swift */; };
+		173197151F67FE5B003ACD1C /* LinearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173197091F67FE42003ACD1C /* LinearPickerView.swift */; };
 		173197281F6803C8003ACD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 173197161F67FEEF003ACD1C /* Assets.xcassets */; };
-		176AD9C21FB4898A00C719A4 /* SaturationPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176AD9C11FB4898A00C719A4 /* SaturationPickerView.xib */; };
-		176AD9C41FB4959C00C719A4 /* SaturationPickerView+TouchHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176AD9C31FB4959C00C719A4 /* SaturationPickerView+TouchHandling.swift */; };
+		176AD9C21FB4898A00C719A4 /* LinearPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176AD9C11FB4898A00C719A4 /* LinearPickerView.xib */; };
+		176AD9C41FB4959C00C719A4 /* LinearPickerView+TouchHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176AD9C31FB4959C00C719A4 /* LinearPickerView+TouchHandling.swift */; };
 		17819D9B1F6191BC007AD1C8 /* CircleColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17819D911F6191BC007AD1C8 /* CircleColorPicker.framework */; };
 		17819DA01F6191BC007AD1C8 /* CircleColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17819D9F1F6191BC007AD1C8 /* CircleColorPickerTests.swift */; };
 		17819DA21F6191BC007AD1C8 /* CircleColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 17819D941F6191BC007AD1C8 /* CircleColorPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1791D8D41F7BCB9400F7396E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1791D8D31F7BCB9400F7396E /* UIView+Extension.swift */; };
+		17C2FB8E1FBF07ED00EB29C2 /* SaturationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2FB8D1FBF07ED00EB29C2 /* SaturationPickerView.swift */; };
+		17C2FB901FBF0F1300EB29C2 /* BrightnessPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2FB8F1FBF0F1300EB29C2 /* BrightnessPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +52,10 @@
 		173197061F67FE42003ACD1C /* ColorBubbleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorBubbleView.xib; sourceTree = "<group>"; };
 		173197071F67FE42003ACD1C /* ColorSampleCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSampleCircleView.swift; sourceTree = "<group>"; };
 		173197081F67FE42003ACD1C /* RainbowCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowCircleView.swift; sourceTree = "<group>"; };
-		173197091F67FE42003ACD1C /* SaturationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationPickerView.swift; sourceTree = "<group>"; };
+		173197091F67FE42003ACD1C /* LinearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearPickerView.swift; sourceTree = "<group>"; };
 		173197161F67FEEF003ACD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		176AD9C11FB4898A00C719A4 /* SaturationPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaturationPickerView.xib; sourceTree = "<group>"; };
-		176AD9C31FB4959C00C719A4 /* SaturationPickerView+TouchHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaturationPickerView+TouchHandling.swift"; sourceTree = "<group>"; };
+		176AD9C11FB4898A00C719A4 /* LinearPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinearPickerView.xib; sourceTree = "<group>"; };
+		176AD9C31FB4959C00C719A4 /* LinearPickerView+TouchHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearPickerView+TouchHandling.swift"; sourceTree = "<group>"; };
 		17819D911F6191BC007AD1C8 /* CircleColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircleColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17819D941F6191BC007AD1C8 /* CircleColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleColorPicker.h; sourceTree = "<group>"; };
 		17819D951F6191BC007AD1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		17819D9F1F6191BC007AD1C8 /* CircleColorPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPickerTests.swift; sourceTree = "<group>"; };
 		17819DA11F6191BC007AD1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1791D8D31F7BCB9400F7396E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		17C2FB8D1FBF07ED00EB29C2 /* SaturationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationPickerView.swift; sourceTree = "<group>"; };
+		17C2FB8F1FBF0F1300EB29C2 /* BrightnessPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,14 +96,16 @@
 			path = ColorPicker;
 			sourceTree = "<group>";
 		};
-		176AD9C01FB4894B00C719A4 /* SaturationPicker */ = {
+		176AD9C01FB4894B00C719A4 /* LinearPickers */ = {
 			isa = PBXGroup;
 			children = (
-				173197091F67FE42003ACD1C /* SaturationPickerView.swift */,
-				176AD9C31FB4959C00C719A4 /* SaturationPickerView+TouchHandling.swift */,
-				176AD9C11FB4898A00C719A4 /* SaturationPickerView.xib */,
+				173197091F67FE42003ACD1C /* LinearPickerView.swift */,
+				176AD9C31FB4959C00C719A4 /* LinearPickerView+TouchHandling.swift */,
+				176AD9C11FB4898A00C719A4 /* LinearPickerView.xib */,
+				17C2FB8D1FBF07ED00EB29C2 /* SaturationPickerView.swift */,
+				17C2FB8F1FBF0F1300EB29C2 /* BrightnessPickerView.swift */,
 			);
-			path = SaturationPicker;
+			path = LinearPickers;
 			sourceTree = "<group>";
 		};
 		176AD9C51FB4970F00C719A4 /* Views */ = {
@@ -107,7 +113,7 @@
 			children = (
 				176AD9C71FB4975400C719A4 /* ColorBubbleView */,
 				176AD9C61FB4972C00C719A4 /* CircleColorPickerView */,
-				176AD9C01FB4894B00C719A4 /* SaturationPicker */,
+				176AD9C01FB4894B00C719A4 /* LinearPickers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				173197121F67FE5B003ACD1C /* ColorBubbleView.xib in Resources */,
-				176AD9C21FB4898A00C719A4 /* SaturationPickerView.xib in Resources */,
+				176AD9C21FB4898A00C719A4 /* LinearPickerView.xib in Resources */,
 				173197281F6803C8003ACD1C /* Assets.xcassets in Resources */,
 				1731970E1F67FE5B003ACD1C /* CircleColorPickerView.xib in Resources */,
 			);
@@ -292,11 +298,13 @@
 				1791D8D41F7BCB9400F7396E /* UIView+Extension.swift in Sources */,
 				1731970D1F67FE5B003ACD1C /* CircleColorPickerView.swift in Sources */,
 				1731970B1F67FE42003ACD1C /* CGPoint+Extensions.swift in Sources */,
-				173197151F67FE5B003ACD1C /* SaturationPickerView.swift in Sources */,
+				173197151F67FE5B003ACD1C /* LinearPickerView.swift in Sources */,
+				17C2FB8E1FBF07ED00EB29C2 /* SaturationPickerView.swift in Sources */,
 				173197101F67FE5B003ACD1C /* CircleColorPickerView+TouchHandling.swift in Sources */,
 				173197111F67FE5B003ACD1C /* ColorBubbleView.swift in Sources */,
-				176AD9C41FB4959C00C719A4 /* SaturationPickerView+TouchHandling.swift in Sources */,
+				176AD9C41FB4959C00C719A4 /* LinearPickerView+TouchHandling.swift in Sources */,
 				173197131F67FE5B003ACD1C /* ColorSampleCircleView.swift in Sources */,
+				17C2FB901FBF0F1300EB29C2 /* BrightnessPickerView.swift in Sources */,
 				1731970F1F67FE5B003ACD1C /* CircleColorPickerViewDelegate.swift in Sources */,
 				1731970A1F67FE42003ACD1C /* CGFloat+Extensions.swift in Sources */,
 				173197141F67FE5B003ACD1C /* RainbowCircleView.swift in Sources */,

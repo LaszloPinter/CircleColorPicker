@@ -21,29 +21,25 @@
 
 import UIKit
 
-public protocol SaturationPickerDelegate: class {
-    func onSaturationChanged(_ saturation: CGFloat)
-}
-
 @IBDesignable
-open class SaturationPickerView: UIView {
+open class LinearPickerView: UIView {
     open var animationTimeInSeconds:Double = 0.2
-    open weak var delegate: SaturationPickerDelegate?
+    open var onValueChange: ((CGFloat)->Void)?
     
-    internal var storedSaturation: CGFloat = 0.5
-    open var saturation: CGFloat {
+    internal var storedValue: CGFloat = 0.5
+    open var value: CGFloat {
         get{
-            return storedSaturation
+            return storedValue
         }
         set{
-            self.storedSaturation = newValue
+            self.storedValue = newValue
             if isVertical {
-                bubbleCenterY.constant = -(storedSaturation-0.5) * (self.bounds.size.height)
+                bubbleCenterY.constant = -(storedValue-0.5) * (self.bounds.size.height)
             }else {
-                bubbleCenterX.constant = (storedSaturation-0.5) * (self.bounds.size.width)
+                bubbleCenterX.constant = (storedValue-0.5) * (self.bounds.size.width)
             }
         }
-
+        
     }
     
     @IBOutlet var contentView: UIView!
@@ -54,7 +50,7 @@ open class SaturationPickerView: UIView {
     
     @IBInspectable var isVertical: Bool = false {
         didSet {
-            saturationMask.isVertical = isVertical
+            handleOrientationChange()
             if isVertical {
                 bubbleCenterX.constant = 0
             }else {
@@ -74,8 +70,8 @@ open class SaturationPickerView: UIView {
     }
     
     internal var isBubbleDragged = false
-    private var saturationMask: SaturationMask!
-
+    open var frontLayerView: UIView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialState()
@@ -88,33 +84,41 @@ open class SaturationPickerView: UIView {
     
     private func setupInitialState() {
         xibSetup()
-        setupSaturationMaskView()
+        setupFrontLayerView()
         setupBubbleMaskImage()
         
     }
     
     private func xibSetup() {
-        contentView = UIView.fromNib(named: String(describing: SaturationPickerView.self),
-                                     bundle: Bundle(for: self.classForCoder), owner: self)!
+        contentView = UIView.fromNib(named: String(describing: LinearPickerView.self),
+                                     bundle: Bundle(for: LinearPickerView.self), owner: self)!
         contentView!.frame = bounds
         
         contentView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(contentView!)
     }
     
-    func setupSaturationMaskView() {
-        saturationMask = SaturationMask(frame: CGRect.init(origin: CGPoint.zero, size: self.bounds.size))
-        saturationMask.backgroundColor = UIColor.clear
-        saturationMask.isVertical = isVertical
-        saturationMask.setNeedsDisplay()
-        contentView.insertSubview(saturationMask, belowSubview: bubbleView)
+    open func handleOrientationChange() {
+        print("Subclasses of LinearPickerView should override handleOrientationChange() function.")
+    }
+    
+    open func createFrontLayerView() -> UIView{
+        print("Subclasses of LinearPickerView should override createFrontLayerView() function.")
+        return UIView(frame: CGRect.init(origin: CGPoint.zero, size: self.bounds.size))
+    }
+    
+    private func setupFrontLayerView() {
+        frontLayerView = createFrontLayerView()
+        frontLayerView.backgroundColor = UIColor.clear
+        frontLayerView.setNeedsDisplay()
+        contentView.insertSubview(frontLayerView, belowSubview: bubbleView)
     }
     
     public func setupBubbleMaskImage(image: UIImage? = Optional.none) {
         if let image = image {
             bubbleView.image = image
         }else {
-            let podBundle = Bundle(for: SaturationPickerView.self)
+            let podBundle = Bundle(for: LinearPickerView.self)
             if let bundleUrl = podBundle.url(forResource: "CircleColorPicker", withExtension: "bundle"),
                 let bundle = Bundle(url: bundleUrl) {
                 let retrievedImage = UIImage(named: "ringMask", in: bundle, compatibleWith: nil)
@@ -124,47 +128,11 @@ open class SaturationPickerView: UIView {
     }
     
     override open func layoutSubviews() {
-        saturationMask.frame = CGRect.init(origin: CGPoint.zero, size: self.bounds.size)
+        frontLayerView.frame = CGRect.init(origin: CGPoint.zero, size: self.bounds.size)
         let cornerRadius = min(self.bounds.size.width, self.bounds.size.height) * 0.5
         contentView.layer.cornerRadius = cornerRadius
         self.layer.cornerRadius = cornerRadius
-        saturationMask.layer.cornerRadius = cornerRadius
-        saturationMask.clipsToBounds = true
-    }
-    
-    class SaturationMask: UIView {
-        public var isVertical = false
-        
-        func drawScale(context: CGContext){
-            
-            let startColor = UIColor.init(hue: 1, saturation: 0, brightness: 1, alpha: 1).cgColor
-            let endColor   = UIColor.init(hue: 1, saturation: 0, brightness: 1, alpha: 0).cgColor
-            
-            let colorSpace = CGColorSpaceCreateDeviceRGB()
-            let colors = [startColor, endColor] as CFArray
-            
-            if let gradient = CGGradient.init(colorsSpace: colorSpace, colors: colors, locations: nil) {
-                var startPoint: CGPoint!
-                var endPoint: CGPoint!
-                
-                if isVertical {
-                    startPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
-                    endPoint = CGPoint(x: self.bounds.width, y: 0)
-                }else {
-                    startPoint = CGPoint(x: 0, y: self.bounds.height)
-                    endPoint = CGPoint(x: self.bounds.width, y: self.bounds.height)
-                }
-                
-                context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: .drawsBeforeStartLocation)
-            }
-        }
-        
-        override func draw(_ rect: CGRect) {
-            super.draw(rect)
-            guard let context = UIGraphicsGetCurrentContext() else {
-                return
-            }
-            drawScale(context: context)
-        }
+        frontLayerView.layer.cornerRadius = cornerRadius
+        frontLayerView.clipsToBounds = true
     }
 }

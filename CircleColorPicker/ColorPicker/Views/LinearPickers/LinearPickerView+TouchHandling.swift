@@ -21,7 +21,7 @@
 
 import Foundation
 
-extension SaturationPickerView {
+extension LinearPickerView {
     private var bubbleDragRadius: CGFloat {
         get{
             return bubbleSize * 0.5 + 4
@@ -82,8 +82,8 @@ extension SaturationPickerView {
             }else {
                percentage = ((self.bubbleView.frame.midX - bounds.midX) / bounds.width) + 0.5
             }
-            self.storedSaturation = percentage
-            self.delegate?.onSaturationChanged(self.storedSaturation)
+            self.storedValue = percentage
+            self.onValueChange?(self.storedValue)
         })
     }
     
